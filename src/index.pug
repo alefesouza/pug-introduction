@@ -1,0 +1,22 @@
+-
+  const pageInfo = {
+    title: 'Introdução ao Pug.js 2',
+    language: 'pt-br'
+  }
+  const random = Math.random()
+doctype
+html(lang=pageInfo.language)
+  head
+    title= pageInfo.title
+  body.mobile
+    .container
+      #main
+        h1= pageInfo.title
+        p= random
+        ul
+          - for (let i = 0; i < 10; i++)
+            - if (i === 3)
+              li Está no 3
+            - else
+              li= i
+        include _arrays

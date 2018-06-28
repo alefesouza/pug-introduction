@@ -3,13 +3,13 @@ const app = express();
 
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-  res.render('express', {
-    title: 'Pug no Express.js',
-    items: ['Mongo', 'Express', 'Angular', 'Node', 'Pug']
+app.get('/', function(req, res) {
+  res.render('index', {
+    title: 'Título',
+    items: ['Pug', 'TypeScript', 'Sass']
   });
 });
 
-app.listen(3000, () => {
-  console.log('App running on http://localhost:3000');
+app.listen(3000, function() {
+  console.log('http://localhost:3000');
 });

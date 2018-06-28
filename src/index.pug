@@ -1,23 +1,28 @@
 -
-  const pageInfo = {
-    title: 'Introdução ao Pug.js 2',
-    language: 'pt-br'
+  const info = {
+    language: 'en',
+    title: 'Título da página',
+    description: 'Descrição'
   }
-  const random = Math.random()
+
 doctype
-html(lang=pageInfo.language)
+html(lang=info.language)
   head
-    title= pageInfo.title
-  body.mobile
-    .container
-      #main
-        h1= pageInfo.title
-        p= random
-        ul
-          - for (let i = 0; i < 10; i++)
-            - if (i === 3)
-              li Está no 3
-            - else
-              li= i
-        include _arrays
-        include _markdown
+    title= info.title
+  body#main
+    div.container.mt-2
+      p.description=info.description
+      - if (info.language == 'pt-BR')
+        span Esta página está em português
+      - else
+        span Esta página não está em português
+      
+      ul
+        - for (let i = 0; i < 10; i++)
+          - if (i == 3)
+            li Está no item 3
+          - else
+            li=i
+
+      include _arrays
+      include _mixins

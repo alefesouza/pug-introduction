@@ -1,0 +1,11 @@
+mixin pet(name, owner)
+  tr.pet
+    td= name
+    td= owner
+
+table
+  th Nome
+  th Dono
+
+  +pet('Pitoco', 'Alefe')
+  +pet('Sofia', 'Amabile')
